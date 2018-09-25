@@ -1,0 +1,393 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Online Blood Bank 
+  description: 'An Online System in which you can Donate and Find for Blood online  by registering and logging into your account.'
+  termsOfService: http://localhost:8080/home
+  contact:
+    name: DXC Group
+  license:
+    name: DXC Group
+host: localhost
+basePath: /rest/bbs
+schemes:
+- http
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /donorreg/name/username/password/dob/gender/bgroup/weight/mobile/address/email/state/city:
+    get:
+      description: Donor Registeration 
+      operationId: donorreg
+      produces:
+      - application/json
+      - application/xml
+      - text/xml
+      - text/html
+     
+      parameters:
+      - name: name
+        in: query
+        description: Enter your Name
+        required: true
+        type: string
+        
+      - name: username
+        in: query
+        description: Enter Username
+        required: true
+        type: string
+        
+      - name: password
+        in: query
+        description: Enter Password
+        required: true
+        type: string
+        
+      - name: dob
+        in: query
+        description: Enter your DOB
+        required: true
+        type: string
+        
+      - name: gender
+        in: query
+        description: Enter your gender
+        required: true
+        type: string
+        
+      - name: bgroup
+        in: query
+        description: Enter your blood group
+        required: true
+        type: string
+        
+      - name: weight
+        in: query
+        description: Enter your weight
+        required: true
+        type: string
+        
+      - name: mobile
+        in: query
+        description: Enter your Mobile number
+        required: true
+        type: string
+        
+      - name: address
+        in: query
+        description: Enter your address
+        required: true
+        type: string
+        
+      - name: email
+        in: query
+        description: Enter your Email
+        required: true
+        type: string
+        
+      - name: state
+        in: query
+        description: Enter your state
+        required: true
+        type: string
+        
+      - name: city
+        in: query
+        description: Enter your city
+        required: true
+        type: string
+      
+      responses:
+        '200':
+          description: registeration successfully done!
+          schema:
+            type: string
+        default:
+          description: unexpected error
+          
+  /patReg/name/username/password/email/bgroup/mobile:
+    get:
+      description: Patient Registeration form
+      operationId: patReg
+      produces:
+      - application/json
+      - application/xml
+      - text/xml
+      - text/html
+      parameters:
+      - name: name
+        in: query
+        description: Enter your name
+        required: true
+        type: string
+      
+      - name: username
+        in: query
+        description: Enter username
+        required: true
+        type: string
+        
+      - name: password
+        in: query
+        description: Enter password
+        required: true
+        type: string
+        
+      - name: email
+        in: query
+        description: Enter your email
+        required: true
+        type: string
+        
+      - name: bgroup
+        in: query
+        description: Enter your blood group
+        required: true
+        type: string
+        
+      - name: mobile
+        in: query
+        description: Enter your mobile number
+        required: true
+        type: string
+      
+      responses:
+        '200':
+          description: Patient Registeration successful done!
+          schema:
+            type: string
+        default:
+          description: unexpected error
+          
+  /donorupd/name/username/password/dob/gender/bgroup/weight/mobile/address/email/state/city:
+    get:
+      description: update donor information
+      operationId: donorupd
+      produces:
+      - application/json
+      - application/xml
+      - text/xml
+      - text/html
+      parameters:
+      - name: name
+        in: query
+        description: Enter name you want to update
+        required: true
+        type: string
+      
+      - name: username
+        in: query
+        description: Enter username you want to update
+        required: true
+        type: string
+        
+      - name: password
+        in: query
+        description: Enter password you want to update
+        required: true
+        type: string
+        
+      - name: dob
+        in: query
+        description: Enter date of birth
+        required: true
+        type: string
+        
+      - name: gender
+        in: query
+        description: Enter gender
+        required: true
+        type: string
+        
+      - name: bgroup
+        in: query
+        description: Enter blood group you want to update
+        required: true
+        type: string
+        
+      - name: weight
+        in: query
+        description: Enter weight you want to update
+        required: true
+        type: string
+      
+      - name: mobile
+        in: query
+        description: Enter mobile number  you want to update
+        required: true
+        type: string
+        
+      - name: address
+        in: query
+        description: Enter address you want to update
+        required: true
+        type: string
+        
+      - name: email
+        in: query
+        description: Enter email you want to update
+        required: true
+        type: string
+        
+      - name: state
+        in: query
+        description: Enter state you want to update
+        required: true
+        type: string
+        
+      - name: city
+        in: query
+        description: Enter city you want to update
+        required: true
+        type: string
+      
+      responses:
+        '200':
+          description: Donor information updated successfully.
+          schema:
+            type: string
+        default:
+          description: unexpected error
+          
+  /dlogin/username/password:
+    get:
+      description: Donor login form
+      operationId: dlogin
+      produces:
+      - application/json
+      - application/xml
+      - text/xml
+      - text/html
+      parameters:
+      
+      - name: username
+        in: query
+        description: Enter your username
+        required: true
+        type: string
+        
+      - name: password
+        in: query
+        description: Enter your password
+        required: true
+        type: string
+        
+      responses:
+        '200':
+          description: Login successfull.
+          schema:
+            type: string
+        default:
+          description: unexpected error
+          
+  /plogin/username/password:
+    get:
+      description: Patient login form
+      operationId: plogin
+      produces:
+      - application/json
+      - application/xml
+      - text/xml
+      - text/html
+      parameters:
+      
+      - name: username
+        in: query
+        description: Enter your username
+        required: true
+        type: string
+        
+      - name: password
+        in: query
+        description: Enter your password
+        required: true
+        type: string
+        
+      responses:
+        '200':
+          description: Login successfull.
+          schema:
+            type: string
+        default:
+          description: unexpected error
+          
+  /dsearch/city:
+    get:
+      description:  Search the donors from the city
+      operationId: dsearch
+      produces:
+      - application/json
+      - application/xml
+      - text/xml
+      - text/html
+      parameters:
+      
+      - name: city
+        in: query
+        description: Enter the city from which you want search the donors.
+        required: true
+        type: string
+        
+      responses:
+        '200':
+          description: Donors are found 
+          schema:
+            type: string
+        default:
+          description: unexpected error
+          
+  /dbgsearch/bloodgroup:
+    get:
+      description: Search the donor on the basis of blood group 
+      operationId: dbgsearch
+      produces:
+      - application/json
+      - application/xml
+      - text/xml
+      - text/html
+      parameters:
+      
+      - name: bloodgroup
+        in: query
+        description: Enter blood group
+        required: true
+        type: string
+        
+      responses:
+        '200':
+          description: Donors are found for given blood group.
+          schema:
+            type: string
+        default:
+          description: unexpected error
+          
+  /ddelete/username:
+    get:
+      description: Delete username
+      operationId: ddelete
+      produces:
+      - application/json
+      - application/xml
+      - text/xml
+      - text/html
+      parameters:
+      
+      - name: username
+        in: query
+        description: Enter your username that you want to delete
+        required: true
+        type: string
+        
+      responses:
+        '200':
+          description: username is deleted
+          schema:
+            type: string
+        default:
+          description: unexpected error
+          
+  
+  

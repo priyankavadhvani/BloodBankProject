@@ -1,0 +1,52 @@
+MongoDB Enterprise > use BloodBank
+
+MongoDB Enterprise > db.donor.insert({name:"shraddha",username:"shraddha",password:"password",dob:"20/04/1997",gender:"Female",bgroup:"O+",weight:"40",mobile:"1234567891",address:"nagar",email:"shra@gmail.com",state:"maharashtra",city:"pune"})
+
+
+MongoDB Enterprise > db.patient.insert({name:"kaveri",username:"kaveri",password:"kaveri",email:"kav@gmail.com",bgroup:"A-",mobile:"7894561237"})
+
+
+MongoDB Enterprise > db.donor.find().pretty()
+{
+        "_id" : ObjectId("5ba9deffb3b0864ce9b4ebe3"),
+        "name" : "shraddha",
+        "username" : "shraddha",
+        "password" : "password",
+        "dob" : "20/04/1997",
+        "gender" : "Female",
+        "bgroup" : "O+",
+        "weight" : "40",
+        "mobile" : "1234567891",
+        "address" : "nagar",
+        "email" : "shra@gmail.com",
+        "state" : "maharashtra",
+        "city" : "pune"
+}
+{
+        "_id" : ObjectId("5ba9e3532a8e021860063405"),
+        "Name" : "pari",
+        "Username" : "pari",
+        "Password" : "pari",
+        "DOB" : "20-4-1997",
+        "Gender" : "Female",
+        "BloodGroup" : "O+",
+        "weight" : "12",
+        "Mobile" : "1236547896",
+        "Address" : "nagar",
+        "Email" : "pari@gmail",
+        "State" : "pune",
+        "City" : "up"
+}
+
+
+
+MongoDB Enterprise > db.patient.find().pretty()
+{
+        "_id" : ObjectId("5ba9dfd5b3b0864ce9b4ebe4"),
+        "name" : "kaveri",
+        "username" : "kaveri",
+        "password" : "kaveri",
+        "email" : "kav@gmail.com",
+        "bgroup" : "A-",
+        "mobile" : "7894561237"
+}
